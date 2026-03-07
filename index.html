@@ -1,0 +1,119 @@
+  const msg = document.getElementById("photoMsg");
+  msg.classList.toggle("show");
+  confettiHearts();
+}
+
+/* ================= FLOATING CONFETTI ================= */
+setInterval(()=>{
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "🎊";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = Math.random()*20 + 16 + "px";
+  heart.style.animationDuration = Math.random()*3 + 4 + "s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),7000);
+},300);
+
+/* ================= BURST CAKE SLICES ================= */
+function burstHearts(){
+  for(let i=0;i<25;i++){
+    const heart = document.createElement("div");
+    heart.innerHTML = "🍰";
+    heart.style.position = "fixed";
+    heart.style.left = "50%";
+    heart.style.top = "50%";
+    heart.style.fontSize = Math.random()*18 + 16 + "px";
+    heart.style.transform = "translate(-50%,-50%)";
+    heart.style.transition = "all 1s ease";
+    document.body.appendChild(heart);
+    setTimeout(()=>{
+      heart.style.left = Math.random()*100 + "vw";
+      heart.style.top = Math.random()*100 + "vh";
+      heart.style.opacity = "0";
+    },50);
+    setTimeout(()=>heart.remove(),1200);
+  }
+  if(navigator.vibrate) navigator.vibrate(80);
+}
+
+/* ================= CONFETTI ================= */
+function confettiHearts(){
+  for(let i=0;i<40;i++){
+    const heart = document.createElement("div");
+    heart.className = "confetti";
+    heart.innerHTML = ["🥳","🎊","🎂","🍰"][Math.floor(Math.random()*4)];
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = Math.random()*16 + 14 + "px";
+    heart.style.animationDuration = Math.random()*2 + 2 + "s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),3000);
+  }
+}
+
+function confettiFlowers(){
+  const flowers = ["🌸","🌺","🌼","🌷","💐"];
+  for(let i=0;i<50;i++){
+    const f = document.createElement("div");
+    f.className = "confetti";
+    f.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
+    f.style.left = Math.random()*100 + "vw";
+    f.style.fontSize = Math.random()*18 + 16 + "px";
+    f.style.animationDuration = Math.random()*2 + 2 + "s";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),3000);
+  }
+}
+
+/* ================= SCRATCH ================= */
+const overlay = document.getElementById("scratchOverlay");
+const scratchCard = document.getElementById("scratchCard");
+let scratched = false;
+
+scratchCard.addEventListener("pointerdown",()=>{
+  confettiFlowers();
+  burstHearts();
+
+  if(scratched) return;
+  scratched = true;
+  overlay.style.transition = "opacity 0.6s ease";
+  overlay.style.opacity = "0";
+  setTimeout(()=>overlay.style.display="none",600);
+});
+
+/* ================= MINI GAME ================= */
+let score = 0;
+const gameArea = document.getElementById("gameArea");
+const comboPopup = document.getElementById("comboPopup");
+
+function showCombo(){
+  comboPopup.textContent = `🎂 COMBO x${score}!`;
+  comboPopup.classList.add("show");
+  confettiFlowers();
+  setTimeout(()=>comboPopup.classList.remove("show"), 2000);
+}
+
+function spawnHeart(){
+  const heart = document.createElement("div");
+  heart.className = "tap-heart";
+  heart.innerHTML = "🍰";
+  heart.style.left = Math.random()*85 + "%";
+  heart.style.top = Math.random()*70 + "%";
+  gameArea.appendChild(heart);
+  heart.addEventListener("click",()=>{
+    score++;
+    document.getElementById("score").textContent = score;
+    heart.remove();
+    burstHearts();
+
+    if(score % 10 === 0){
+      showCombo();
+    }
+  });
+  setTimeout(()=>heart.remove(),2000);
+}
+setInterval(spawnHeart,700);
+</script>
+
+</body>
+</html>
