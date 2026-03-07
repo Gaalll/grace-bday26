@@ -396,50 +396,7 @@ button:hover {
       </div>
     </div>
 
-    <script>
-  // Scratch card logic
-  const scratchCard = document.getElementById("scratchCard");
-  const overlay = document.getElementById("scratchOverlay");
-  const ctx = overlay.getContext("2d");
 
-  // Set canvas size to match card
-  overlay.width = overlay.offsetWidth;
-  overlay.height = overlay.offsetHeight;
-
-  // Fill overlay with gradient
-  const gradient = ctx.createLinearGradient(0,0,overlay.width,overlay.height);
-  gradient.addColorStop(0, "#ff8080");
-  gradient.addColorStop(1, "#ff4d4d");
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, overlay.width, overlay.height);
-
-  let scratching = false;
-
-  function getPos(e){
-    const rect = overlay.getBoundingClientRect();
-    const x = e.touches ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
-    const y = e.touches ? e.touches[0].clientY - rect.top : e.clientY - rect.top;
-    return {x, y};
-  }
-
-  function scratch(e){
-    if(!scratching) return;
-    const {x, y} = getPos(e);
-    ctx.globalCompositeOperation = 'destination-out';
-    ctx.beginPath();
-    ctx.arc(x, y, 15, 0, Math.PI * 2);
-    ctx.fill();
-  }
-
-  overlay.addEventListener("mousedown", ()=> scratching=true);
-  overlay.addEventListener("mouseup", ()=> scratching=false);
-  overlay.addEventListener("mouseleave", ()=> scratching=false);
-  overlay.addEventListener("mousemove", scratch);
-
-  overlay.addEventListener("touchstart", ()=> scratching=true);
-  overlay.addEventListener("touchend", ()=> scratching=false);
-  overlay.addEventListener("touchmove", scratch);
-</script>
 
     <!-- MINI GAME -->
     <div class="game">
@@ -598,6 +555,7 @@ function confettiFlowers(){
 
 </body>
 </html>
+
 
 
 
