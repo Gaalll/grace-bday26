@@ -1,9 +1,9 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>😸 For Mikita 🎂</title>
+<title>🩵 For Grace 🤍</title>
 <link rel="icon" type="image/png" href="favicon.ico">
 
 <style>
@@ -15,7 +15,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #7fd7ff, #4da3ff);
+  background: linear-gradient(135deg, #ff1a1a, #ff4d4d); /* RED gradient */
   min-height: 100vh;
   overflow-x: hidden;
   color: white;
@@ -26,7 +26,7 @@ body {
 .lock-screen {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #7fd7ff, #4da3ff);
+  background: linear-gradient(135deg, #ff3333, #ff6666); /* lock screen red gradient */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,10 +64,11 @@ body {
 .lock-countdown {
   font-size: 0.95rem;
   margin-bottom: 14px;
-  color: #e9f9ff;
+  color: #ffe9e9;
   text-shadow: 0 0 10px rgba(255,255,255,0.4);
 }
-  .lock-box input {
+
+.lock-box input {
   width: 100%;
   padding: 12px;
   border-radius: 14px;
@@ -81,7 +82,7 @@ body {
 .lock-error {
   font-size: 0.9rem;
   margin-top: 8px;
-  color: #ffe1eb;
+  color: #ffd1d1;
   opacity: 0;
   transform: scale(0.9);
   transition: all 0.3s ease;
@@ -92,7 +93,7 @@ body {
   transform: scale(1);
 }
 
-/* ================= FLOATING CONFETTI ================= */
+/* ================= FLOATING HEARTS ================= */
 .heart {
   position: fixed;
   bottom: -20px;
@@ -101,7 +102,8 @@ body {
   opacity: 0.8;
   pointer-events: none;
 }
-  @keyframes floatUp {
+
+@keyframes floatUp {
   from { transform: translateY(0) scale(1); opacity: 1; }
   to { transform: translateY(-120vh) scale(1.5); opacity: 0; }
 }
@@ -121,10 +123,11 @@ body {
 
 .name {
   font-size: clamp(2.5rem, 6vw, 3.8rem);
-  color: #e9f9ff;
-  text-shadow: 0 0 10px #7fffdf, 0 0 25px #9dff7f;
+  color: #ffb3b3;
+  text-shadow: 0 0 10px #ffb3b3, 0 0 25px #ffb3b3;
   margin-bottom: 20px;
 }
+
 /* ================= PHOTO ================= */
 .photo {
   width: 180px;
@@ -153,7 +156,7 @@ body {
 .photo-message {
   margin-top: 10px;
   font-size: 1.1rem;
-  color: #e9f9ff;
+  color: #ffe9e9;
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.4s ease;
@@ -174,42 +177,44 @@ body {
   backdrop-filter: blur(12px);
   box-shadow: 0 0 35px rgba(0,0,0,0.25);
 }
-  .letter {
+
+.letter {
   font-size: clamp(1rem, 3.5vw, 1.15rem);
   line-height: 1.7;
   margin-bottom: 25px;
 }
 
 /* ================= COUNTERS ================= */
-.counter, .countdown, .birthcounter {
+.counter, .countdown {
   font-size: 1.1rem;
   margin-bottom: 16px;
-  color: #e9f9ff;
+  color: #ffe9e9;
   text-shadow: 0 0 10px rgba(255,255,255,0.4);
 }
 
 /* ================= BUTTONS ================= */
 button {
-  background: linear-gradient(45deg, #7fffdf, #9dff7f);
+  background: linear-gradient(45deg, #ff8080, #ff4d4d);
   border: none;
   border-radius: 35px;
   padding: 14px 32px;
   font-size: 1.05rem;
   color: white;
   cursor: pointer;
-  box-shadow: 0 0 18px #7fffdf;
+  box-shadow: 0 0 18px #ff8080;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   margin-top: 10px;
 }
+
 button:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 28px #7fffdf;
+  box-shadow: 0 0 28px #ff8080;
 }
 
 #secret {
   margin-top: 20px;
   font-size: 1.2rem;
-  color: #e9f9ff;
+  color: #ffe9e9;
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.5s ease;
@@ -234,8 +239,9 @@ button:hover {
   overflow: hidden;
   touch-action: none;
   cursor: pointer;
-  box-shadow: 0 0 18px #7fffdf;
+  box-shadow: 0 0 18px #ff8080;
 }
+
 .scratch-text {
   position: absolute;
   inset: 0;
@@ -243,7 +249,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: #ffeff5;
+  color: #ffe9e9;
   background: rgba(255,255,255,0.12);
   border-radius: 14px;
   z-index: 1;
@@ -252,9 +258,10 @@ button:hover {
 .scratch-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, #7fffdf, #9dff7f);
+  background: linear-gradient(45deg, #ff8080, #ff4d4d);
   z-index: 2;
 }
+
 /* ================= MINI GAME ================= */
 .game {
   margin-top: 25px;
@@ -287,19 +294,20 @@ button:hover {
   from { transform: scale(0.5); opacity:0;}
   to { transform: scale(1); opacity:1;}
 }
+
 /* ================= COMBO POPUP ================= */
 .combo-popup {
   position: fixed;
   top: 20%;
   left: 50%;
   transform: translateX(-50%) scale(0.7);
-  background: linear-gradient(45deg, #7fffdf, #9dff7f);
+  background: linear-gradient(45deg, #ff8080, #ff4d4d);
   padding: 14px 28px;
   border-radius: 40px;
   font-size: 1.3rem;
   font-weight: bold;
   color: white;
-  box-shadow: 0 0 25px #7fffdf;
+  box-shadow: 0 0 25px #ff8080;
   opacity: 0;
   transition: all 0.4s ease;
   z-index: 9999;
@@ -308,36 +316,6 @@ button:hover {
 .combo-popup.show {
   opacity: 1;
   transform: translateX(-50%) scale(1);
-}
-/* ================= COMBO POPUP ================= */
-.combo-popup {
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%) scale(0.7);
-  background: linear-gradient(45deg, #7fffdf, #9dff7f);
-  padding: 14px 28px;
-  border-radius: 40px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: white;
-  box-shadow: 0 0 25px #7fffdf;
-  opacity: 0;
-  transition: all 0.4s ease;
-  z-index: 9999;
-}
-
-.combo-popup.show {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
-/* ================= NOTE ================= */
-.note {
-  margin-top: 25px;
-  font-size: 0.95rem;
-  opacity: 0.95;
-  line-height: 1.6;
 }
 
 /* ================= CONFETTI ================= */
@@ -348,98 +326,90 @@ button:hover {
   animation: confettiFall linear forwards;
   pointer-events: none;
 }
+
 @keyframes confettiFall {
   to { transform: translateY(120vh) rotate(720deg); opacity:0; }
 }
 </style>
 </head>
-
 <body>
+
 <!-- ================= PASSWORD SCREEN ================= -->
 <div class="lock-screen" id="lockScreen">
   <div class="lock-box">
     <div class="lock-title">🎂 Birthday Surprise</div>
-    <div class="lock-sub">Enter the password I gave you lol 🍰</div>
-    <div class="lock-countdown" id="lockCountdown">⏳ Loading Birthday countdown...</div>
+    <div class="lock-sub">Enter the password to open your birthday surprise 💌</div>
+    <div class="lock-countdown" id="lockCountdown">⏳ Loading birthday countdown...</div>
     <input type="password" id="passwordInput" placeholder="Password...">
-    <button onclick="checkPassword()">Unlock 😺</button>
+    <button onclick="checkPassword()">Unlock 💖</button>
     <div class="lock-error" id="lockError">Wrong password 😭</div>
   </div>
 </div>
 
 <!-- ================= MAIN CONTENT ================= -->
 <div class="container" id="mainContent">
-  <div class="name">Happy Birthday, Mikita 🥳🤍</div>
+  <div class="name">Grace 🩵</div>
 
   <!-- PHOTO -->
   <div class="photo" onclick="photoSurprise()">
-    <img src="Mikita.png" alt=":3">
+    <img src="grace_photo.png" alt="Us together 🩵🤍">
   </div>
   <div class="photo-message" id="photoMsg">
-    You're older now, sorry ba 😭
+    This is my favorite picture because we're in it ^^ 💖
   </div>
 
   <div class="card">
-<!-- COUNTDOWN / TIME SINCE BIRTHDAY -->
-    <div class="countdown" id="countdown">⏳ Loading Birthday’s countdown...</div>
 
-    <!-- TIME FRIENDS -->
-    <div class="counter" id="counter">😼 Calculating our time together...</div>
+    <!-- COUNTDOWN / TIME SINCE BIRTHDAY -->
+    <div class="countdown" id="countdown">⏳ Loading birthday countdown...</div>
 
-    <!-- TIME BIRTH -->
-    <div class="counter" id="birthcounter">🤍 Calculating birth time...</div>
+    <!-- TIME TOGETHER -->
+    <div class="counter" id="counter">💞 Calculating our time together...</div>
 
     <div class="letter">
-      Dear Mikita,<br><br>
-      This birthday, i wish you abundant happiness and love. Be happy!
-      Today is the day you were brought into this world to be a blessing
-      and inspiration to the people around you! Happy birthday to one of
-      the sweetest people ive ever known 🥹<br><br>
+      Dear Grace,<br><br>
+      From the moment you came into my life, everything felt warmer, brighter,
+      and more alive. You make me feel safe, loved, and understood in ways
+      I never knew were possible.<br><br>
 
-      You’re older today than yesterday but younger than tomorrow 🤯<br><br>
+      I love how passionate you are about everything you do. Loving you is easy. I hope that today is filled with the same joy you bring into my life.<br><br>
 
-      Forget about the past, you can’t change it, forget about the future, you can’t
-      predict it.. and forget about the present, i didn’t get you one, neah jkjk XD<br>
-      - Grace :3 🤍
+      Your heart is fragile and sensitive just like mine, but I'm as careful as possible with it. Happy Birthday! 💖<br>
+      - Alan :3
     </div>
 
-    <button onclick="unlockLove()">🍰 Click for a secret</button>
-<div id="secret">
-      🍰 Secret 😺<br>
+    <button onclick="unlockLove()">💘 Click for a secret</button>
+
+    <div id="secret">
+      🩵 Secret 🤍<br>
       <strong>
-      As you get older three things happen ba.. the first is your memory goes, and i can’t remember
-      the other two 💀 Happy birthday!
-      </strong> 😸
+      All I need in this life is you and me. I’m yours. No refunds or exchanges. I know loving me isn’t always the easiest. But trust me, I’m worth it.
+      </strong> 💖
     </div>
 
     <!-- SCRATCH TO REVEAL -->
     <div class="scratch-container">
-      <div style="margin-bottom:8px;">😼 Click to reveal</div>
+      <div style="margin-bottom:8px;">💌 Scratch to reveal</div>
       <div class="scratch-card" id="scratchCard">
-        <div class="scratch-text">Happy birthday imPURE angel! Hope this day purifies you..<br>
-        V5NKCVQ47P2K</div>
+        <div class="scratch-text">💖 Happy Birthday Grace! 💖</div>
         <div class="scratch-overlay" id="scratchOverlay"></div>
       </div>
     </div>
 
     <!-- MINI GAME -->
     <div class="game">
-      <div class="score">🍰 Cake slices collected: <span id="score">0</span></div>
+      <div class="score">💝 Hearts collected: <span id="score">0</span></div>
       <div class="game-area" id="gameArea"></div>
-    </div>
-
-    <div class="note">
-      😺 Many years ago on this day, God decided to send an angel to earth.
-          The angel was meant to touch lives and that happened!
     </div>
   </div>
 </div>
+
 <!-- ================= COMBO POPUP ================= -->
-<div class="combo-popup" id="comboPopup">🎂 COMBO x10!</div>
+<div class="combo-popup" id="comboPopup">💖 COMBO x10!</div>
 
 <script>
 /* ================= PASSWORD ================= */
-const correctPassword = "mikitabday;b26";
+const correctPassword = "grace<3;mar30";
 
 function checkPassword(){
   const input = document.getElementById("passwordInput").value;
@@ -455,8 +425,9 @@ function checkPassword(){
     setTimeout(() => error.classList.remove("show"), 1500);
   }
 }
-/* ================= COUNTDOWN → TIME SINCE BIRTHDAY ================= */
-const birthdayDate = new Date(new Date().getFullYear(), 1, 28, 0, 0, 0);
+
+/* ================= COUNTDOWN ================= */
+const birthdayDate = new Date("March 30, 2026 00:00:00");
 
 function updateCountdown(){
   const now = new Date();
@@ -474,22 +445,20 @@ function updateCountdown(){
   let text = "";
 
   if(now < birthdayDate){
-    text = `⏳ Birthday in <strong>${days}</strong>d <strong>${hours}</strong>h <strong>${minutes}</strong>m <strong>${seconds}</strong>s 🎂`;
+    text = `⏳ Birthday in <strong>${days}</strong>d <strong>${hours}</strong>h <strong>${minutes}</strong>m <strong>${seconds}</strong>s 💖`;
   } else {
-    text = `⏳ It’s been <strong>${days}</strong>d <strong>${hours}</strong>h <strong>${minutes}</strong>m <strong>${seconds}</strong>s since your Birthday 2026 🎂`;
+    text = `⏳ It’s been <strong>${days}</strong>d <strong>${hours}</strong>h <strong>${minutes}</strong>m <strong>${seconds}</strong>s since your Birthday 💖`;
   }
 
   elMain.innerHTML = text;
   elLock.innerHTML = text;
 }
+
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-/* ================= TIME FRIENDS ================= */
-const startDate = new Date("2022-12-05T00:00:00");
-
-/* ================= TIME BIRTH ================= */
-const birthDate = new Date("2010-02-28T00:00:00");
+/* ================= TIME TOGETHER ================= */
+const startDate = new Date("2025-08-10T00:00:00");
 
 function updateCounter(){
   const now = new Date();
@@ -500,23 +469,10 @@ function updateCounter(){
   const days = Math.floor(diff/1000/60/60/24);
 
   document.getElementById("counter").innerHTML =
-    `😼 We've been friends for <strong>${days}</strong> days, <strong>${hours}</strong> hours, <strong>${minutes}</strong> minutes, <strong>${seconds}</strong> seconds 😝 .. damn coaie`;
+    `💞 Together for <strong>${days}</strong> days, <strong>${hours}</strong> hours, <strong>${minutes}</strong> minutes, <strong>${seconds}</strong> seconds 🩵`;
 }
 setInterval(updateCounter,1000);
 updateCounter();
-
-function updateCounterBday(){
-  const now = new Date();
-  let diff = now - birthDate;
-  const seconds = Math.floor(diff/1000)%60;
-  const minutes = Math.floor(diff/1000/60)%60;
-  const hours = Math.floor(diff/1000/60/60)%24;
-  const days = Math.floor(diff/1000/60/60/24);
-document.getElementById("birthcounter").innerHTML =
-    `🤍 You've been a shining light in this world for <strong>${days}</strong> days, <strong>${hours}</strong> hours, <strong>${minutes}</strong> minutes, <strong>${seconds}</strong> seconds 😸`;
-}
-setInterval(updateCounterBday,1000);
-updateCounterBday();
 
 /* ================= SECRET ================= */
 function unlockLove(){
@@ -531,11 +487,12 @@ function photoSurprise(){
   msg.classList.toggle("show");
   confettiHearts();
 }
-/* ================= FLOATING CONFETTI ================= */
+
+/* ================= FLOATING HEARTS ================= */
 setInterval(()=>{
   const heart = document.createElement("div");
   heart.className = "heart";
-  heart.innerHTML = "🎊";
+  heart.innerHTML = "💖";
   heart.style.left = Math.random()*100 + "vw";
   heart.style.fontSize = Math.random()*20 + 16 + "px";
   heart.style.animationDuration = Math.random()*3 + 4 + "s";
@@ -543,11 +500,11 @@ setInterval(()=>{
   setTimeout(()=>heart.remove(),7000);
 },300);
 
-/* ================= BURST CAKE SLICES ================= */
+/* ================= BURST HEARTS ================= */
 function burstHearts(){
   for(let i=0;i<25;i++){
     const heart = document.createElement("div");
-    heart.innerHTML = "🍰";
+    heart.innerHTML = "🩵";
     heart.style.position = "fixed";
     heart.style.left = "50%";
     heart.style.top = "50%";
@@ -570,7 +527,7 @@ function confettiHearts(){
   for(let i=0;i<40;i++){
     const heart = document.createElement("div");
     heart.className = "confetti";
-    heart.innerHTML = ["🥳","🎊","🎂","🍰"][Math.floor(Math.random()*4)];
+    heart.innerHTML = ["💝","🩵","💘","🤍"][Math.floor(Math.random()*4)];
     heart.style.left = Math.random()*100 + "vw";
     heart.style.fontSize = Math.random()*16 + 14 + "px";
     heart.style.animationDuration = Math.random()*2 + 2 + "s";
@@ -585,61 +542,4 @@ function confettiFlowers(){
     const f = document.createElement("div");
     f.className = "confetti";
     f.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
-    f.style.left = Math.random()*100 + "vw";
-    f.style.fontSize = Math.random()*18 + 16 + "px";
-    f.style.animationDuration = Math.random()*2 + 2 + "s";
-    document.body.appendChild(f);
-    setTimeout(()=>f.remove(),3000);
-  }
-}
-/* ================= SCRATCH ================= */
-const overlay = document.getElementById("scratchOverlay");
-const scratchCard = document.getElementById("scratchCard");
-let scratched = false;
-
-scratchCard.addEventListener("pointerdown",()=>{
-  confettiFlowers();
-  burstHearts();
-
-  if(scratched) return;
-  scratched = true;
-  overlay.style.transition = "opacity 0.6s ease";
-  overlay.style.opacity = "0";
-  setTimeout(()=>overlay.style.display="none",600);
-});
-/* ================= MINI GAME ================= */
-let score = 0;
-const gameArea = document.getElementById("gameArea");
-const comboPopup = document.getElementById("comboPopup");
-
-function showCombo(){
-  comboPopup.textContent = `🎂 COMBO x${score}!`;
-  comboPopup.classList.add("show");
-  confettiFlowers();
-  setTimeout(()=>comboPopup.classList.remove("show"), 2000);
-}
-
-function spawnHeart(){
-  const heart = document.createElement("div");
-  heart.className = "tap-heart";
-  heart.innerHTML = "🍰";
-  heart.style.left = Math.random()*85 + "%";
-  heart.style.top = Math.random()*70 + "%";
-  gameArea.appendChild(heart);
-  heart.addEventListener("click",()=>{
-    score++;
-    document.getElementById("score").textContent = score;
-    heart.remove();
-    burstHearts();
-
-    if(score % 10 === 0){
-      showCombo();
-    }
-  });
-  setTimeout(()=>heart.remove(),2000);
-}
-setInterval(spawnHeart,700);
-</script>
-
-</body>
-</html>
+    f.style.left =
