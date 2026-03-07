@@ -395,6 +395,24 @@ button:hover {
         <div class="scratch-overlay" id="scratchOverlay"></div>
       </div>
     </div>
+    <script>
+  // Grab overlay
+  const overlay = document.getElementById("scratchOverlay");
+
+  // Remove overlay on click
+  overlay.addEventListener("click", () => {
+    overlay.style.transition = "opacity 0.5s ease";
+    overlay.style.opacity = 0;          // fade out
+    setTimeout(() => overlay.remove(), 500); // remove from DOM
+  });
+
+  // Optional: remove overlay on drag
+  overlay.addEventListener("mousedown", () => {
+    overlay.style.transition = "opacity 0.5s ease";
+    overlay.style.opacity = 0;
+    setTimeout(() => overlay.remove(), 500);
+  });
+</script>
 
 
 
@@ -555,6 +573,7 @@ function confettiFlowers(){
 
 </body>
 </html>
+
 
 
 
