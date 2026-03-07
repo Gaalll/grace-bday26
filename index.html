@@ -393,6 +393,11 @@ button:hover {
       <div class="scratch-card" id="scratchCard">
         <div class="scratch-text">💖 Happy Birthday Grace! 💖</div>
         <canvas class="scratch-overlay" id="scratchOverlay"></canvas>
+        function revealCard() {
+    const overlay = document.getElementById("scratchOverlay");
+    overlay.style.display = "none"; // hide overlay to reveal the message
+  }
+</script>
       </div>
     </div>
 
@@ -598,6 +603,7 @@ function confettiFlowers(){
 
 </body>
 </html>
+
 
 
 
