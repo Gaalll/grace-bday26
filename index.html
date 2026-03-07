@@ -396,21 +396,65 @@ button:hover {
       </div>
     </div>
     <script>
-  // Grab overlay
-  const overlay = document.getElementById("scratchOverlay");
+ <style>
+  .scratch-card {
+    position: relative;
+    width: 260px;
+    height: 90px;
+    margin: auto;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 18px #ff8080;
+  }
 
-  // Remove overlay on click
-  overlay.addEventListener("click", () => {
-    overlay.style.transition = "opacity 0.5s ease";
-    overlay.style.opacity = 0;          // fade out
-    setTimeout(() => overlay.remove(), 500); // remove from DOM
+  .scratch-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #ffe9e9;
+    background: rgba(255,255,255,0.12);
+    border-radius: 14px;
+    z-index: 0; /* send to back */
+  }
+
+  .scratch-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, #ff8080, #ff4d4d);
+    z-index: 1;
+  }
+</style>
+
+<script>
+  const overlay = document.getElementById("scratchOverlay");
+  let isScratching = false;
+
+  // Start scratch on mouse down or touch
+  overlay.addEventListener("mousedown", () => isScratching = true);
+  overlay.addEventListener("touchstart", () => isScratching = true);
+
+  // Stop scratch
+  overlay.addEventListener("mouseup", () => isScratching = false);
+  overlay.addEventListener("mouseleave", () => isScratching = false);
+  overlay.addEventListener("touchend", () => isScratching = false);
+
+  // Scratch effect: remove overlay when dragging
+  overlay.addEventListener("mousemove", (e) => {
+    if(isScratching){
+      overlay.style.opacity = 0;
+      setTimeout(()=>overlay.remove(), 300);
+    }
   });
 
-  // Optional: remove overlay on drag
-  overlay.addEventListener("mousedown", () => {
-    overlay.style.transition = "opacity 0.5s ease";
-    overlay.style.opacity = 0;
-    setTimeout(() => overlay.remove(), 500);
+  overlay.addEventListener("touchmove", (e) => {
+    if(isScratching){
+      overlay.style.opacity = 0;
+      setTimeout(()=>overlay.remove(), 300);
+    }
   });
 </script>
 
@@ -573,6 +617,7 @@ function confettiFlowers(){
 
 </body>
 </html>
+
 
 
 
