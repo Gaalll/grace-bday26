@@ -542,5 +542,15 @@ function confettiFlowers(){
     const f = document.createElement("div");
     f.className = "confetti";
     f.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
-    f.style.left =
-    </html>
+    f.style.left = Math.random()*100 + "vw";
+    f.style.fontSize = Math.random()*16 + 14 + "px";
+    f.style.animationDuration = Math.random()*2 + 2 + "s";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),3000);
+  }
+}
+</script>
+
+</body>
+</html>
+
