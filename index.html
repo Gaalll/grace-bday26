@@ -403,14 +403,14 @@ button:hover {
 
     <!-- MINI GAME -->
     <div class="game">
-      <div class="score">💝 Hearts collected: <span id="score">0</span></div>
+      <div class="score">🍰 cake slices collected: <span id="score">0</span></div>
       <div class="game-area" id="gameArea"></div>
     </div>
   </div>
 </div>
 
 <!-- ================= COMBO POPUP ================= -->
-<div class="combo-popup" id="comboPopup">💖 COMBO x10!</div>
+<div class="combo-popup" id="comboPopup">🎂 COMBO x10!</div>
 
 <script>
 /* ================= PASSWORD ================= */
@@ -569,6 +569,7 @@ scratchCard.addEventListener("pointerdown",()=>{
   overlay.style.opacity = "0";
   setTimeout(()=>overlay.style.display="none",600);
 });
+  
   /* ================= MINI GAME ================= */
 let score = 0;
 const gameArea = document.getElementById("gameArea");
@@ -605,8 +606,3 @@ setInterval(spawnHeart,700);
 
 </body>
 </html>
-
-
-
-
-
