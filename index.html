@@ -554,21 +554,57 @@ function confettiFlowers(){
     setTimeout(()=>f.remove(),3000);
   }
 }
+/* ================= SCRATCH ================= */
+const overlay = document.getElementById("scratchOverlay");
+const scratchCard = document.getElementById("scratchCard");
+let scratched = false;
+
+scratchCard.addEventListener("pointerdown",()=>{
+  confettiFlowers();
+  burstHearts();
+
+  if(scratched) return;
+  scratched = true;
+  overlay.style.transition = "opacity 0.6s ease";
+  overlay.style.opacity = "0";
+  setTimeout(()=>overlay.style.display="none",600);
+});
+  /* ================= MINI GAME ================= */
+let score = 0;
+const gameArea = document.getElementById("gameArea");
+const comboPopup = document.getElementById("comboPopup");
+
+function showCombo(){
+  comboPopup.textContent = `🎂 COMBO x${score}!`;
+  comboPopup.classList.add("show");
+  confettiFlowers();
+  setTimeout(()=>comboPopup.classList.remove("show"), 2000);
+}
+
+function spawnHeart(){
+  const heart = document.createElement("div");
+  heart.className = "tap-heart";
+  heart.innerHTML = "🍰";
+  heart.style.left = Math.random()*85 + "%";
+  heart.style.top = Math.random()*70 + "%";
+  gameArea.appendChild(heart);
+  heart.addEventListener("click",()=>{
+    score++;
+    document.getElementById("score").textContent = score;
+    heart.remove();
+    burstHearts();
+
+    if(score % 10 === 0){
+      showCombo();
+    }
+  });
+  setTimeout(()=>heart.remove(),2000);
+}
+setInterval(spawnHeart,700);
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
