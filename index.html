@@ -603,6 +603,21 @@ function spawnHeart(){
   setTimeout(()=>heart.remove(),2000);
 }
 setInterval(spawnHeart,700);
+  <!-- PLAY SONG BUTTON -->
+<button id="playSongBtn">🎶 Play my song</button>
+
+<!-- Hidden YouTube player (small, so autoplay works) -->
+<div id="ytPlayer" style="display:none; margin-top:10px;">
+  <iframe 
+    id="ytFrame"
+    width="300" 
+    height="50"
+    src=""
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
   // ================= PLAY SONG BUTTON =================
 const playBtn = document.getElementById("playSongBtn");
 const ytFrame = document.getElementById("ytFrame");
