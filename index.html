@@ -603,44 +603,7 @@ function spawnHeart(){
   setTimeout(()=>heart.remove(),2000);
 }
 setInterval(spawnHeart,700);
-  <!-- PLAY SONG BUTTON -->
-<button id="playSongBtn">🎶 Play my song</button>
 
-<!-- Hidden YouTube player (small, so autoplay works) -->
-<div id="ytPlayer" style="display:none; margin-top:10px;">
-  <iframe 
-    id="ytFrame"
-    width="300" 
-    height="50"
-    src=""
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-</div>
-  // ================= PLAY SONG BUTTON =================
-const playBtn = document.getElementById("playSongBtn");
-const ytFrame = document.getElementById("ytFrame");
-
-// 3:20 → 4:15
-const startTime = 200;
-const endTime = 255;
-
-playBtn.addEventListener("click", () => {
-    // Play from 3:20
-    ytFrame.src = `https://www.youtube.com/embed/nSDgHBxUbVQ?start=${startTime}&autoplay=1`;
-
-    burstHearts();
-    confettiHearts();
-
-    playBtn.disabled = true;
-    playBtn.textContent = "🎶 Playing...";
-
-    // Stop at 4:15
-    setTimeout(() => {
-        ytFrame.src = "";
-    }, (endTime - startTime) * 1000); // 55 seconds
-});
 </script>
 
 </body>
